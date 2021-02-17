@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: duplication-python
+spec:
+  selector:
+    matchLabels:
+      app: duplication-python
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: duplication-python
+    spec:
+      containers:
+        - env:
+            - name: ENV_FOLDER_PATH
+              value: /tmp/test/
+          name: duplication-python
+          image: duplication-python:1
+          imagePullPolicy: Always
