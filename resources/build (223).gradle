@@ -1,0 +1,66 @@
+// Unfortunately, gradle does not support applying the buildscript section from
+// a parent file, we need to define it in each microservice project. Maybe in the future.
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'com.google.protobuf', name: 'protobuf-gradle-plugin', version: '0.8.1'
+    }
+}
+
+// Unfortunately, gradle does not support applying the buildscript section from
+// a parent file, we need to define it in each microservice project. Maybe in the future.
+buildscript {
+    repositories {
+        mavenCentral()ssss
+    }
+    dependencies {
+        classpath group: 'com.google.protobuf', name: 'protobuf-gradle-plugin', version: '0.8.1'
+    }
+}
+
+// Unfortunately, gradle does not support applying the buildscript section from
+// a parent file, we need to define it in each microservice project. Maybe in the future.
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'com.google.protobuf', name: 'protobuf-gradle-plugin', version: '0.8.1'
+    }
+}
+
+// Unfortunately, gradle does not support applying the buildscript section from
+// a parent file, we need to define it in each microservice project. Maybe in the future.
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'com.google.protobuf', name: 'protobuf-gradle-plugin', version: '0.8.1'
+    }
+}
+
+// Unfortunately, gradle does not support applying the buildscript section from
+// a parent file, we need to define it in each microservice project. Maybe in the future.
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'com.google.protobuf', name: 'protobuf-gradle-plugin', version: '0.8.1'
+    }
+}
+
+// Unfortunately, gradle does not support applying the buildscript section from
+// a parent file, we need to define it in each microservice project. Maybe in the future.
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'com.google.protobuf', name: 'protobuf-gradle-plugin', version: '0.8.1'
+    }
+}
+
