@@ -1,26 +1,29 @@
 #!/usr/bin/env python
 
 import os
+import sys
 from collections import defaultdict
 
 
-def check_by_file_size(path):
+def check_by_file_size(paths):
     files_by_size = defaultdict(list)
     files_by_size_tmp = defaultdict(list)
 
-    for dirpath, _, filenames in os.walk(path):
-        for filename in filenames:
-            full_path = os.path.join(dirpath, filename)
-            try:
-                full_path = os.path.realpath(full_path)
-                file_size = os.path.getsize(full_path)
-            except OSError:
-                # not accessible (permissions, etc) - pass on
-                continue
-            files_by_size_tmp[file_size].append(full_path)
-        for size in files_by_size_tmp:
-            if (len(files_by_size_tmp[size]) > 1):
-                files_by_size[size] = files_by_size_tmp[size]
+    for path in paths:
+
+        for dirpath, _, filenames in os.walk(path):
+            for filename in filenames:
+                full_path = os.path.join(dirpath, filename)
+                try:
+                    full_path = os.path.realpath(full_path)
+                    file_size = os.path.getsize(full_path)
+                except OSError:
+                    # not accessible (permissions, etc) - pass on
+                    continue
+                files_by_size_tmp[file_size].append(full_path)
+            for size in files_by_size_tmp:
+                if (len(files_by_size_tmp[size]) > 1):
+                    files_by_size[size] = files_by_size_tmp[size]
 
     return files_by_size
 
@@ -62,7 +65,8 @@ def check_for_duplicates(path):
 
 
 if __name__ == "__main__":
-    # Getting folder path from env
-    folder_path = os.environ['ENV_FOLDER_PATH']
-    print("Going to check for file duplication on folder_path: {0}".format(folder_path))
-    check_for_duplicates(folder_path)
+    print (sys.argv[1:])
+    if sys.argv[1:]:
+        check_for_duplicates(sys.argv[1:])
+    else:
+        print("Usage: %s <folder> [<folder>...]" % sys.argv[0])
